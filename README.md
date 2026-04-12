@@ -40,13 +40,6 @@ Project sederhana untuk mengolah nilai mahasiswa, termasuk validasi, perhitungan
 
 Setiap modul memiliki unit testnya masing-masing untuk memastikan fungsionalitas berjalan dengan baik.
 
-## Build Project Mengecualikan Test
-`mvn -q -DskipTests package
-
-## Jalankan Program
-javac
-
-
 ## Cara Menjalankan
 
 1.  Pastikan Maven sudah terinstall.
