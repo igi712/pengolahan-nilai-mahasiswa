@@ -40,13 +40,6 @@ Project sederhana untuk mengolah nilai mahasiswa, termasuk validasi, perhitungan
 
 Setiap modul memiliki unit testnya masing-masing untuk memastikan fungsionalitas berjalan dengan baik.
 
-## Cara Menjalankan
-
-1.  Pastikan Maven sudah terinstall.
-2.  Buka terminal di root direktori project.
-3.  Jalankan `mvn clean install`.
-4.  Jalankan `java -cp target/pengolahan-nilai-mahasiswa-1.0-SNAPSHOT.jar app.Main`.
-
 ## Build Project Mengecualikan Test
 `mvn -q -DskipTests package`
 
@@ -56,3 +49,5 @@ Setiap modul memiliki unit testnya masing-masing untuk memastikan fungsionalitas
 ## Unit Test
 `mvn test`
 
+## Specific Unit Test
+`mvn test -Dtest="module.modulename"`
