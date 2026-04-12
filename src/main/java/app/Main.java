@@ -1,4 +1,9 @@
-package src;
+package app;
+
+import module.HitungNilaiAkhir;
+import module.InputData;
+import module.TentukanGrade;
+import module.TentukanKelulusan;
 
 import java.util.Scanner;
 
@@ -8,7 +13,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        StudentGrading grading = new StudentGrading();
+        InputData inputData = new InputData();
+        HitungNilaiAkhir hitungNilaiAkhir = new HitungNilaiAkhir();
+        TentukanGrade tentukanGrade = new TentukanGrade();
+        TentukanKelulusan tentukanKelulusan = new TentukanKelulusan();
         boolean continueInput = true;
 
         System.out.println("=========================================");
@@ -16,38 +24,17 @@ public class Main {
         System.out.println("=========================================");
 
         while (continueInput) {
-            double tugas = 0, uts = 0, uas = 0;
-            boolean validInput = false;
-
-            // Loop untuk meminta input yang valid
-            while (!validInput) {
-                System.out.print("\nMasukkan Nilai Tugas (0-100): ");
-                tugas = scanner.nextDouble();
-                
-                System.out.print("Masukkan Nilai UTS (0-100): ");
-                uts = scanner.nextDouble();
-                
-                System.out.print("Masukkan Nilai UAS (0-100): ");
-                uas = scanner.nextDouble();
-
-                if (grading.validateGrades(tugas, uts, uas)) {
-                    validInput = true;
-                } else {
-                    System.out.println("-----------------------------------------");
-                    System.out.println("Error: Input tidak valid.");
-                    System.out.println("- Pastikan nilai berada dalam rentang 0-100.");
-                    System.out.println("- Semua nilai tidak boleh 0 secara bersamaan.");
-                    System.out.println("Silakan masukkan ulang data.");
-                    System.out.println("-----------------------------------------");
-                }
-            }
+            double[] grades = inputData.inputGrades();
+            double tugas = grades[0];
+            double uts = grades[1];
+            double uas = grades[2];
 
             // Menjalankan perhitungan jika input valid
-            double finalGrade = grading.calculateFinalGrade(tugas, uts, uas);
+            double finalGrade = hitungNilaiAkhir.calculateFinalGrade(tugas, uts, uas);
 
             if (finalGrade != -1.0) {
-                String grade = grading.determineGrade(finalGrade);
-                String passStatus = grading.determinePassStatus(finalGrade);
+                String grade = tentukanGrade.determineGrade(finalGrade);
+                String passStatus = tentukanKelulusan.determinePassStatus(finalGrade);
 
                 System.out.println("\n============ Hasil Kalkulasi ============");
                 System.out.printf("Nilai Akhir    : %.2f\n", finalGrade);
