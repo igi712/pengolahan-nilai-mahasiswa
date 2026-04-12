@@ -69,19 +69,19 @@ public class StudentGrading {
      * @param finalGrade Nilai akhir mahasiswa
      * @return Karakter tipe String yang merepresentasikan grade (A-E), atau "Invalid" jika nilai error.
      */
-    public String determineGrade(double finalGrade) {
-        if (finalGrade < 0 || finalGrade > 100) {
-            return "Invalid";
-        } else if (finalGrade >= 85) {
-            return "A";
-        } else if (finalGrade >= 70) {
-            return "B";
-        } else if (finalGrade >= 60) {
-            return "C";
-        } else if (finalGrade >= 50) {
-            return "D";
+    public String determineGrade(double finalGrade) {  // node 1
+        if (finalGrade < 0 || finalGrade > 100) {      // node 2
+            return "Invalid";                          // node 3
+        } else if (finalGrade >= 85) {                 // node 4
+            return "A";                                // node 5
+        } else if (finalGrade >= 70) {                 // node 6
+            return "B";                                // node 7
+        } else if (finalGrade >= 60) {                 // node 8
+            return "C";                                // node 9
+        } else if (finalGrade >= 50) {                 // node 10
+            return "D";                                // node 11
         } else {
-            return "E";
+            return "E";                                // node 12
         }
     }
 
