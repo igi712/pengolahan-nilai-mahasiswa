@@ -14,13 +14,21 @@ public class ValidasiData {
      * @param uas   Nilai UAS
      * @return true jika valid, false jika sebaliknya.
      */
-    public boolean validateGrades(double tugas, double uts, double uas) {
-        if (tugas < 0 || tugas > 100 || uts < 0 || uts > 100 || uas < 0 || uas > 100) {
+    public boolean validateGrades(double... grades) {
+        if (grades == null || grades.length == 0) {
             return false;
         }
-        if (tugas == 0 && uts == 0 && uas == 0) {
-            return false;
+
+        boolean allZeros = true;
+        for (double grade : grades) {
+            if (Double.isNaN(grade) || grade < 0 || grade > 100) {
+                return false;
+            }
+            if (grade != 0) {
+                allZeros = false;
+            }
         }
-        return true;
+
+        return !allZeros;
     }
 }
