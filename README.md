@@ -51,3 +51,6 @@ Setiap modul memiliki unit testnya masing-masing untuk memastikan fungsionalitas
 
 ## Specific Unit Test
 `mvn test -Dtest="module.modulename"`
+
+## Generate Test Report (Maven Site -)
+`mvn site`
