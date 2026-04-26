@@ -15,6 +15,7 @@ Project sederhana untuk mengolah nilai mahasiswa, termasuk validasi, perhitungan
 │   │       └── module
 │   │           ├── HitungNilaiAkhir.java
 │   │           ├── InputData.java
+|   |           ├── PengolahanNilai.java
 │   │           ├── TentukanGrade.java
 │   │           ├── TentukanKelulusan.java
 │   │           └── ValidasiData.java
@@ -23,7 +24,6 @@ Project sederhana untuk mengolah nilai mahasiswa, termasuk validasi, perhitungan
 │           └── module
 │               ├── HitungNilaiAkhirTest.java
 │               ├── TentukanGradeTest.java
-│               ├── TentukanKelulusanTest.java
 │               └── ValidasiDataTest.java
 └── target
 ```
