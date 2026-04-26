@@ -31,8 +31,7 @@ buildNumber.properties
 *.ctxt
 
 # Mobile Tools for Java (J2ME)
-.mtj2ME)
-.mtj2mewt
+.mtj.tmp/
 
 # Package Files #
 *.jar
